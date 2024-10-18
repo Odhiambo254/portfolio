@@ -231,7 +231,7 @@ body {
   position: fixed;
   padding-block: 15px;
   width: 100%;
-  background-color: var(--space-cadet);
+  background-color: var(--cadet-blue-crayola);
   height: 65px;
   box-shadow: var(--shadow);
   overflow: hidden;
@@ -251,7 +251,7 @@ body {
 }
 
 .logo {
-  color: var(--white);
+  color: var(--orange-soda);
   font-family: var(--ff-poppins);
   font-size: 2.4rem;
 }
@@ -306,7 +306,7 @@ body {
 .rotate-img { display: none; }
 
 .hero {
-  background-image: url("../images/hero-bg.jpg");
+  background-image: url("../images/data_analysis.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -329,7 +329,7 @@ body {
 
 .hero-content {
   text-align: center;
-  color: var(--white);
+  color: var(--black);
 }
 
 .hero-title {
