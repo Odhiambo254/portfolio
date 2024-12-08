@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Projects - My Portfolio{% endblock %}
+
+{% block content %}
+    <div class="container mt-4 text-center">
+        <h1>My Projects</h1>
+
+        <!-- First Project: Clinic Management System -->
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="{% static 'clinic_system.JPG' %}" class="img-fluid rounded" alt="Clinic Management System">
+            </div>
+            <div class="col-md-6 text-left">
+                <h2>Clinic Management System</h2>
+                <p class="lead">A system that allows the admin to register patients, assign IP numbers, book appointments, and generate bills.</p>
+                <a href="{% url 'projects' %}" class="btn btn-primary">View Project</a>
+            </div>
+        </div>
+
+        <!-- Second Project: Bot -->
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="{% static 'clinic_system.JPG' %}" class="img-fluid rounded" alt="Bot">
+            </div>
+            <div class="col-md-6 text-left">
+                <h2>Bot</h2>
+                <p class="lead">A chatbot designed to assist with customer service and data collection.</p>
+                <a href="{% url 'projects' %}" class="btn btn-primary">View Project</a>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

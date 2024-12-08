@@ -1,0 +1,10 @@
+
+.project-image {
+    max-width: 150px; /* Smaller image initially */
+    transition: transform 0.3s ease; /* Smooth magnify effect */
+}
+
+.project-image:hover {
+    transform: scale(1.5); /* Magnify on hover */
+}
+

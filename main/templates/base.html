@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home - My Portfolio{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: transparent; /* Remove the default background */
+            border: none; /* Remove any border around the icons */
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            background: none; /* Ensure no background for the buttons */
+            border: none; /* Remove border from the clickable areas */
+        }
+
+        .carousel-inner img {
+            width: 100%; /* Ensure the images fill the carousel container */
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-item img {
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+            border-radius: 10px; /* Curved corners */
+        }
+
+        .carousel-item:hover img {
+            transform: scale(1.1); /* Magnify on hover */
+        }
+
+        .carousel-caption h5 {
+            font-size: 1.5rem; /* Adjust the project title font size */
+        }
+
+        .carousel-caption p {
+            font-size: 1.1rem; /* Adjust the project description font size */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Add this container inside your body, just after the <body> tag -->
+<div class="container">
+    <!-- Use Bootstrap's positioning utilities to place the button -->
+    <a href="{% static 'CV_ODHIAMBO_ANDREWBRIAN.pdf' %}" class="btn btn-outline-dark btn-sm position-absolute top-0 end-0 m-3" download>
+        Download CV
+    </a>
+</div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="{% url 'home' %}">Andrew Odhiambo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'projects' %}">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact Me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% static 'CV_ODHIAMBO_ANDREWBRIAN.pdf' %}" class="btn btn-outline-dark btn-sm position-absolute top-0 end-0 m-3" download>
+        Download CV
+    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}
+    <div class="jumbotron text-center">
+        <h1>Welcome to My Portfolio</h1>
+        <p class="lead">Hi, I'm Andrew Odhiambo, a self-taught software developer. I am proficient in Python, Django, and Pandas.
+            I also have advanced skills in database languages such as MySQL and PostgreSQL.</p>
+        <p class="lead">Showcasing my projects and skills.</p>
+    </div>
+
+    <div class="container">
+        <div id="projectCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="{% static 'dental_system.jpg' %}" class="d-block w-100 rounded img-thumbnail" alt="Clinic Management System">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Clinic Management System</h5>
+                        <p>A clinic management system that allows admins to log in and register patients.</p>
+                        <a href="#" class="btn btn-primary">View Project</a>
+                    </div>
+                </div>
+
+                <!-- New Image 1 -->
+                <div class="carousel-item">
+                    <img src="{% static 'clinic_system.JPG' %}" class="d-block w-100 rounded img-thumbnail" alt="Project 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Project 2</h5>
+                        <p>Description of your second project.</p>
+                    </div>
+                </div>
+
+                <!-- Add more carousel items as needed -->
+                <div class="carousel-item">
+                    <img src="{% static 'dental_system.jpg' %}" class="d-block w-100 rounded img-thumbnail" alt="Project 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Project 3</h5>
+                        <p>Description of your third project.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-target="#projectCarousel" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#projectCarousel" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    {% endblock %}
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Contact Information</h5>
+                    <p>Email: odhiamboandrew76@gmail.com</p>
+                    <p>Phone: +254794212696</p>
+                </div>
+                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                    <h5 class="text-uppercase">Follow Me</h5>
+                    <a href="https://linkedin.com/in/andrew-odhiambo-065ba719b" class="btn btn-outline-dark btn-sm" target="_blank">LinkedIn</a>
+                    <a href="http://github.com/Odhiambo254" class="btn btn-outline-dark btn-sm" target="_blank">GitHub</a>
+                    <a href="https://wa.me/254794212696" class="btn btn-outline-dark btn-sm">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-dark text-white">
+            &copy; 2024 Andrew Odhiambo. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- jQuery and Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
